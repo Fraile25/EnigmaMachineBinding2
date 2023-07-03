@@ -1,0 +1,64 @@
+﻿<Window x:Class="EnigmaMachineBinding2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EnigmaMachineBinding2"
+        mc:Ignorable="d"
+        Title="Mi máquina enigma automática personalizada || Hecho por: Alejandro Fraile del Olmo" Height="900" Width="1600">
+    <Grid Background="#FFE6E6E6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0"
+                   Grid.ColumnSpan="3">
+            <Label Content="Mi Máquina Enigma Automática Personalizada" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Cascadia Code" FontSize="56" FontWeight="Bold" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="Clave: " HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold" FontSize="30"  />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+            <TextBox x:Name="TbClave" Width="200" Height="60"
+                     Text="{Binding Path=Clave, UpdateSourceTrigger=LostFocus}" 
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextAlignment="Center" 
+                     FontFamily="Cascadia Code" FontSize="24" MaxLength="3" Margin="5"/>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="0">
+            <Label Content="Mensaje: " HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold" FontSize="30" />
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="1" 
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Margin="5,5,5,5">
+            <TextBox x:Name="TbMensajeClaro" 
+                     Text="{Binding Path=MsgClaro, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     FontFamily="Cascadia Code" Padding="5,5,5,5" FontSize="18" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="3" Grid.Column="0">
+            <Label Content="Mensaje Cifrado: " HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold" FontSize="30" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="1" 
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Margin="5,5,5,5">
+            <TextBlock x:Name="TbMensajeCifrado" 
+                     Text="{Binding Path=MsgCifrado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     FontFamily="Cascadia Code" Padding="5,5,5,5" FontSize="18" Background="#FFF5F7C6"/>
+        </DockPanel>
+        <Button x:Name="btnVaciarCampos" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnVaciarCampos_Click" Padding="30,20" FontFamily="Cascadia Code" FontSize="48" Background="#FF80F597" >Vaciar Campos</Button>
+        <Button x:Name="btnCopiarPortapapeles" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20,5" FontFamily="Cascadia Code" FontSize="24" Background="#FFF9BFBF" 
+                
+                Height="139" FontWeight="Bold" Click="btnCopiarPortapapeles_Click" >Copiar mensaje cifrado en el portapapeles</Button>
+    </Grid>
+</Window>
