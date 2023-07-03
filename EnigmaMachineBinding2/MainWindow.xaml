@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EnigmaMachineBinding2"
         mc:Ignorable="d"
-        Title="Mi máquina enigma automática personalizada || Hecho por: Alejandro Fraile del Olmo" Height="900" Width="1600">
+        Title="Mi máquina enigma automática personalizada || Hecho por: Alejandro Fraile del Olmo" Height="900" Width="1600"
+        Icon="logo/logo.ico">
     <Grid Background="#FFE6E6E6">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>

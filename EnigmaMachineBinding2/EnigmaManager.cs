@@ -417,7 +417,7 @@ namespace Binding3
             rotor3 = InicializarRotor(rotor3);
 
             //InicializarRotores();
-            return msg_cif.ToUpper();
+            return msg_cif.ToString().Replace("_", " ").ToUpper();
         }
     }
 }
